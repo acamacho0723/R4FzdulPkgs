@@ -1,0 +1,11 @@
+Package: binder-setup
+Type: Project
+Depends: R (>= 4.3.0)
+Imports:
+    sf,
+    dplyr,
+    ggplot2,
+    rmarkdown
+Remotes:
+    fdzul/rgeomex,
+    fdzul/deneggs
