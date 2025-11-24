@@ -1,0 +1,37 @@
+---
+title: "Análisis CENAPRECE - INDRE"
+output: html_notebook
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(sf)
+library(dplyr)
+library(ggplot2)
+```
+
+## Cargar paquetes específicos
+```{r}
+# Cargar rgeomex si está disponible
+if(require(rgeomex)) {
+  print("rgeomex cargado correctamente")
+} else {
+  print("Instalando rgeomex...")
+  devtools::install_github("fdzul/rgeomex")
+  library(rgeomex)
+}
+```
+
+## Análisis de datos geoespaciales
+```{r}
+# Ejemplo con datos de rgeomex
+data(AGEB_inegi_2019_a, package = "rgeomex")
+head(AGEB_inegi_2019_a)
+```
+
+## Visualización
+```{r}
+ggplot() +
+  geom_sf(data = AGEB_inegi_2019_a) +
+  theme_minimal()
+```
